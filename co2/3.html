@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Registration Form Validation</title>
+<script>
+function validationForm() {
+var name = document.forms["regform"]["name"].value;
+var email = document.forms["regform"]["email"].value;
+var password = document.forms["regform"]["password"].value;
+var confirm = document.forms["regform"]["confirm"].value;
+
+if(name === "") {
+    alert("Please enter your full name!");
+    return false;
+}
+
+if(email === "") {
+    alert("Please enter your email!");
+    return false;
+}
+
+if(password === "") {
+    alert("Please enter your password!");
+    return false;
+}
+
+if(confirm === "") {
+    alert("Please confirm your password!");
+    return false;
+}
+
+if(password .length<6) {
+    alert("Password must be atleast 6 characters long!");
+    return false;
+}
+
+if(password != confirm) {
+    alert("Passwords do not match!");
+    return false;
+}
+
+   alert("Registration successfull");
+   return true;
+}
+</script>
+</head>
+
+<body>
+<h2>Registration Form</h2>
+<form name="regform" onsubmit="return validateForm()">
+Full Name: <input type="text" name="name" id="name"><br><br>
+Email: <input type="email" name="email" id="email"><br><br>
+Password: <input type="password" name="password" id="password"><br><br>
+Confirm Password: <input type="password" name="confirm" id="confirm"><br><br>
+<input type="submit" value="register">
+</form>
+</body>
+</html>
